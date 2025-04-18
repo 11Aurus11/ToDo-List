@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### `npm install`
+Set it to Todo-List-main\Todo-List-main>
+
 ## Available Scripts
 
 In the project directory, you can run:
