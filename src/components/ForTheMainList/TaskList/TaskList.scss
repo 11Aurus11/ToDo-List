@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+
+$primary-color: #dbdbdb;
+$background-dark: #070707;
+$text-light: #ffffff;
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+$but-add: #5678CF;
+$but-del: rgb(131, 182, 164);
+$t: all 0.3s ease;
+
+* {
+    outline: none;
+    margin: 0;
+    padding: 0;
+
+    body {
+       background-color: #303030; 
+    }
+    
+
+    #container--main-list {
+        max-width: 90%;
+        height: 90vh;
+        margin: 1rem auto;
+        padding: 1rem;
+        background: lighten($background-dark, 10%);
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        color: $text-light;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    .containing--in-class {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .add--view-time {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba($primary-color, 0.2);
+            border-radius: $border-radius;
+
+            .button--add {
+
+                #new--button-add {
+                    width: 320px;
+                    padding: 15px 35px;
+                    background-color: $but-add;
+                    color: $text-light;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-size: 25px;
+                    font-weight: bold;
+                    font-family: 'Istok Web';
+                    transition: $t;
+                    text-align: left;
+
+                    &:hover {
+                        background-color: darken($but-add, 10%);
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+                    }
+                    &:active {
+                        transform: translateY(0px);
+                        box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+                    }
+                }
+            }
+
+            .view--add {
+                
+                .view--of-features {
+                    width: 320px;
+                    padding: 17px 16px;
+                    border-radius: 10px;
+                    border: 2px solid rgba($primary-color, 0.3);
+                    background-color: #838383;
+                    cursor: pointer;
+                    font-family: 'Istok Web', sans-serif;
+                    font-size: 22px;
+                    font-weight: bold;
+                    color: $text-light;
+                    transition: $t;
+                    appearance: none;
+                    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+                    background-repeat: no-repeat;
+                    background-position: right 10px center;
+                    background-size: 16px;
+
+                    &:hover {
+                        border-color: $primary-color;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+                    }
+
+                    .option--all {
+                        padding: 8px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .recording--field {
+            max-height: 690px;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: $border-radius;
+            border: 2px dashed rgba($text-light, 0.3);
+            overflow-y: auto;
+        
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+        &.collapsed {
+            max-height: 0;;
+        }
+
+        &:empty::before {
+            content: "Добавьте вашу первую задачу...";
+            display: block;
+            text-align: center;
+            color: rgba($text-light, 0.5);
+            font-style: italic;
+        }
+
+        .task--item {
+            background: rgba($primary-color, 0.03);
+            border-radius: 10px;
+            margin-bottom: 5px;
+            border-bottom: #303030 solid 3px;
+            box-shadow: $box-shadow;
+            padding: 0px 50px 20px 18px;
+
+            .new--arr {
+                color: $primary-color;
+                border: none;
+            }
+
+            .label--item{
+                width: 100%;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                background-color: rgba($primary-color, 0.10);
+                padding: 2px 15.5px 5px 15.5px;
+                
+                .arr-title {
+                    font-size: 25px;
+                    color: #41cc9e;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            }
+            .textarea--item {
+                height: auto;
+                padding-bottom: 15px;
+
+                .arr-description {
+                    background: rgba($primary-color, 0.03);
+                    padding: 10px 12px 0px 20px;
+                    border-radius: 10px;
+                    width: 100%;
+                    height: auto;
+                    font-size: 22px;
+                    resize: none;
+                    overflow: auto;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            }
+            .delete {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                position: relative;
+                background-color: $but-del;
+                color: white;
+                font-size: 17px;
+                font-weight: 600;
+                border: none;
+                border-radius: 10px;
+                width: 100px;
+                padding: 10px 0px 10px 0px;
+                transition: $transition;
+            
+            &:hover {
+                background-color: rgb(216, 103, 103);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+            &:active {
+                transform: translateY(0px);
+                box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+                background-color: rgb(196, 82, 82);
+            }
+            }
+        }
+
+        
+        }
+    }
+    }
+}
